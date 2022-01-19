@@ -1,0 +1,28 @@
+{% extends 'base.html'%}{% block content %}
+
+<h1 style="text-align: center;">Finger Math</h1>
+
+<div style="justify-content: center; display: flex; margin-top: 30px;"><img src="{{ url_for('video') }}"></div>
+
+<center>
+<div class="btn-group" role="group" aria-label="Basic example">
+
+    <form method="POST" action="/enter">
+        <input class="btn btn-primary" type="submit" value="Enter" name="Enter">
+    </form>
+    <form method="POST" action="/clear">
+        <input class="btn btn-primary" type="submit" value="Clear" name="Clear">
+    </form>
+
+</div>
+</center>
+
+
+
+{% for item in characters %}
+{{item.character}}
+{% endfor %}
+
+
+
+{% endblock %}
